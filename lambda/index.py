@@ -44,7 +44,7 @@ def lambda_handler(event, context):
         print("FastAPI response:", json.dumps(response_body, default=str))
         
         # アシスタントの応答を取得
-        assistant_response = response_body["response"]
+        assistant_response = response_body["response_text"]
         
         # 会話履歴に追加
         messages = conversation_history.copy()
