@@ -26,14 +26,14 @@ def lambda_handler(event, context):
         
         # FastAPIへのPOST用ペイロード
         payload = {
-            "message": message
+            "prompt": message
         }
         
         print("Calling FastAPI prediction API with payload:", json.dumps(payload))
         
         # FastAPIへPOSTリクエスト
         response = requests.post(
-            f"{MODEL_API_URL}/predict",
+            f"{MODEL_API_URL}/generate",
             headers={"Content-Type": "application/json"},
             json=payload
         )
